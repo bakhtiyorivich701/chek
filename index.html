@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      $('#input').change(function(){
+        var input = $(this).val();
+        $('ul').append('<li>' + input + ' <i class = "fas fa-check"></i> <i class = "fas fa-trash"></i> </li>');
+        $(this).val();
+      });
+
+      $('ul').on('click', '.fa-trash', function(){
+       $(this).parent('li').fadeOut(200);
+      });
+
+      $('ul').on('click', '.fa-check', function(){
+       $(this).parent('li').toggleClass('checked');
+      });
+
+
+
+
+
+      });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <input type="text"  id="input" placeholder="press enter to add">
+        <ul></ul>
+    </div>
+</body>
+</html>
